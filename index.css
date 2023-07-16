@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400;500&display=swap');
+
+
+body {
+    width: 95%;
+    height: 95%;
+    text-align: left;
+    font-family: 'Tektur', cursive;
+}
+
+::selection {
+    color: thistle;
+}
+
+#theme {
+    width: 12%;
+    height: 6%;
+    background-color: white;
+    border-radius: 48%;
+    position: fixed;
+    bottom: 3%;
+    right: 3%;
+}
+
+#header {
+    position: sticky;
+    width: auto;
+    height: 5%;
+    font-size: 70px;
+    text-align: center;
+    border-radius: 0px;
+    background: #ffffff;
+    opacity: 0.95;
+    box-shadow:  8px 8px 16px #bababa,
+		 -8px -8px 16px #ffffff;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    font-family: 'Tektur', cursive;
+}
+
+
+main {
+    margin: 20px;
+}
+
+
+img {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 20%;
+}
