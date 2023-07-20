@@ -12,31 +12,65 @@ body {
     color: thistle;
 }
 
-#theme {
+.buttonIcons {
     width: 12%;
     height: 6%;
     background-color: white;
     border-radius: 48%;
     position: fixed;
-    bottom: 3%;
     right: 3%;
+}
+
+#theme {
+    bottom: 3%;
+
+}
+
+#menu {
+    /*display: none;*/
+    opacity: 1;
+    position: fixed;
+    top: 38%;
+    background: #e0e0e0;
+    color: black;
+    /*left: vw;*/
+    padding-right: 50px;
+}
+
+#menuList {
+    
+}
+
+h2 {
+    position: absolute;
+    top: 49%;
+    right: 38%;
+    font-size: medium;
+    text-align: center;
+    font-family: 'Tektur', cursive;
+}
+
+#menuIcon {
+    bottom: 14%;
 }
 
 #header {
     position: sticky;
     width: auto;
     height: 5%;
+    top:1%;
     font-size: 70px;
     text-align: center;
     border-radius: 0px;
-    background: #ffffff;
     opacity: 0.95;
-    box-shadow:  8px 8px 16px #bababa,
-		 -8px -8px 16px #ffffff;
+    /*box-shadow: 8px 8px -8px -8px  #ffffff;*/
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
     font-family: 'Tektur', cursive;
+    border-radius: 25px;
+    background: #e0e0e0;
+   /* box-shadow:  12px 12px 38px #b3b3b3,
+		 -12px -12px 38px #ffffff;*/
 }
 
 
@@ -45,8 +79,25 @@ main {
 }
 
 
-img {
+#logo {
+    animation-name: LogoReveal;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
     margin-top: auto;
     margin-bottom: auto;
     width: 20%;
+}
+
+@keyframes LogoReveal
+{
+
+    0%{
+	filter: blur(10px);
+    }
+
+    100%
+    {
+	filter: blur(0px);
+    }
 }
