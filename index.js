@@ -1,11 +1,11 @@
 window.onload = () => {
+
 	const body = document.getElementById("root");
 	const header = document.getElementById("header");
 	const main = document.getElementsByTagName("main");
 	const menuIcon = document.getElementById("menuIcon");
 	const themeButton = document.getElementById("theme");
 	const menu = document.getElementById("menu");
-
 
 	let darkmode = false;
 	let is_menu_open = false;
@@ -114,9 +114,9 @@ window.onload = () => {
 		function blur() {
 
 			i -= 5;
-		    main[0].style.color = darkmode ? `rgba(0, 0, 0,${i / 100})` : `rgba(224, 224, 224,${i / 100})`;  
+		    main[0].style.color = darkmode ? `rgba(224, 224, 224,${i / 100})`: `rgba(0, 0, 0,${i / 100})` ;  
 			menu.style.opacity = `{(100 - i)/100}`;
-		    if (i <= 10) {
+		    if (i <= 0) {
 				window.cancelAnimationFrame(animation_id);
 			is_incomplete = false;
 
@@ -126,10 +126,10 @@ window.onload = () => {
 
 		}
 
-		function unblur() {
+		function unblur(){
 
 			i += 5;
-		    main[0].style.color = darkmode ? `rgba(224, 224, 224,${i / 10})` : `rgba(0, 0, 0,${i / 10})`;
+		    main[0].style.color = darkmode ? `rgba(224, 224, 224,${i / 100})`:`rgba(0, 0, 0,${i / 100})`;
 		    menu.style.opacity = `{(100 - i)/100}`;
 		    
 			if (i >= 100) {
@@ -142,16 +142,16 @@ window.onload = () => {
 
     menuIcon.addEventListener("click", () => {
 			if (is_incomplete) {
-
+				main[0].style.color = darkmode ? `rgba(224, 224, 224,0)`: `rgba(0, 0, 0,0)` ;
 				window.cancelAnimationFrame(animation_id);
 				is_incomplete = false;
-				i = is_menu_open ? 100 : 20;
+				i = is_menu_open ? 100 : 0;
 			
 			}
 
 			if (is_menu_open) {
 			
-				menu.style.opacity = '1';
+				//menu.style.opacity = '1';
 				animation_id = requestAnimationFrame(unblur);
 			    is_menu_open = false;
 			    menu.style.display = "none";

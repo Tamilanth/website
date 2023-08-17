@@ -11,7 +11,7 @@ body {
 ::selection {
     color: cyan;
 }
-
+/*
 #about {
     padding: 30px;
     width: 80% ;
@@ -24,24 +24,7 @@ body {
     margin-bottom: 10%;
     background-color: #e0e0e0;
 }
-
-#introPic {
-    width: 70%;
-    animation-name: bordeRad;
-    animation-fill-mode: both;
-    animation-duration: 30s;
-    animation-iteration-count: infinite;
-    /*border-radius: 31% 69% 63% 37% / 67% 57% 43% 33%  ;
-*/    height:70%;
-   
-    background: linear-gradient(145deg, #f0f0f0, #cacaca);
-    box-shadow:  18px 18px 36px #bebebe,
-		 -18px -18px 36px #ffffff;
-    
-    margin: 10%;
-    
-}
-
+*/
 a {
    text-decoration: none;
 }
