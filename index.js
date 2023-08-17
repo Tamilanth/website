@@ -29,7 +29,6 @@ window.onload = () => {
 		function animate_to_dark() {
 
 		    i_theme++;
-		//   if (!is_menu_open)
 			body.style.color = `rgba(255, 255, 255, ${i_theme / 100})`;
 			body.style.background = `rgba(0, 0, 0, ${i_theme / 100})`;
 			header.style.background = `rgba(0, 0, 0, ${i_theme / 100 - 0.15})`;
@@ -78,7 +77,9 @@ window.onload = () => {
 			}
 
 		if (!darkmode) {
-		  
+		  		if (!is_menu_open) {                                                    
+				main[0].style.color = `rgba(255, 255, 255,100)` ;
+                        }
 				is_incomplete_theme = true;
 				header.style.boxShadow = "8px 8px -8px -8px black";
 				animation_id_theme = window.requestAnimationFrame(animate_to_dark);
@@ -87,6 +88,9 @@ window.onload = () => {
 
 			}
 		else {
+				if (!is_menu_open) {                                                    
+				main[0].style.color = `rgba(0,0, 0,100)` ;
+                        }
 		   
 				is_incomplete_theme = true;
 				header.style.boxShadow = "8px 8px -8px -8px #ffffff";
@@ -142,10 +146,10 @@ window.onload = () => {
 
     menuIcon.addEventListener("click", () => {
 			if (is_incomplete) {
-				main[0].style.color = darkmode ? `rgba(224, 224, 224,0)`: `rgba(0, 0, 0,0)` ;
+				main[0].style.color = darkmode ? `rgba(224, 224, 224,100)`: `rgba(0, 0, 0,100)` ;
 				window.cancelAnimationFrame(animation_id);
 				is_incomplete = false;
-				i = is_menu_open ? 100 : 0;
+				i = is_menu_open ? 0 : 100;
 			
 			}
 
@@ -159,7 +163,6 @@ window.onload = () => {
 	else {
 	    menu.style.display = 'block';
 			    menu.style.background = "black";
-			 			  	    
 				animation_id = requestAnimationFrame(blur);
 			    is_menu_open = true;
 			    
