@@ -9,37 +9,76 @@ body {
 }
 
 ::selection {
-    color: thistle;
+    color: cyan;
+}
+
+#about {
+    padding: 30px;
+    width: 80% ;
+    border-radius: 8%;
+    height: 10%;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow:  18px 18px 36px #bebebe,
+		 -18px -18px 36px #ffffff;
+    margin-bottom: 10%;
+    background-color: #e0e0e0;
+}
+
+#introPic {
+    width: 70%;
+    animation-name: bordeRad;
+    animation-fill-mode: both;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    /*border-radius: 31% 69% 63% 37% / 67% 57% 43% 33%  ;
+*/    height:70%;
+   
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow:  18px 18px 36px #bebebe,
+		 -18px -18px 36px #ffffff;
+    
+    margin: 10%;
+    
+}
+
+a {
+   text-decoration: none;
+}
+
+a:visited {
+    color: black;
 }
 
 .buttonIcons {
     width: 12%;
     height: 6%;
     background-color: white;
-    border-radius: 48%;
+    /*border-radius: 30%;*/
     position: fixed;
     right: 3%;
 }
 
 #theme {
     bottom: 3%;
-
+ 
 }
 
 #menu {
-    /*display: none;*/
-    opacity: 1;
+    display: none; 
+    /*opacity: 1;*/
     position: fixed;
+   
     top: 38%;
-    background: #e0e0e0;
+   
     color: black;
-    /*left: vw;*/
     padding-right: 50px;
 }
-
+/*
 #menuList {
     
 }
+*/
 
 h2 {
     position: absolute;
@@ -51,7 +90,10 @@ h2 {
 }
 
 #menuIcon {
-    bottom: 14%;
+    bottom: 10%;
+    width: 8%;
+    padding-right: 10px;
+    height: 8%;
 }
 
 #header {
@@ -82,8 +124,9 @@ main {
 #logo {
     animation-name: LogoReveal;
     animation-duration: 2s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: both;
     animation-iteration-count: 1;
+    animation-fill-mode: backwards;
     margin-top: auto;
     margin-bottom: auto;
     width: 20%;
@@ -99,5 +142,44 @@ main {
     100%
     {
 	filter: blur(0px);
+    }
+}
+
+@keyframes bordeRad {
+    0% {
+	border-radius: 40% 60% 38% 62% / 60% 45% 55% 40% ;
+    }
+
+    4% {
+	border-radius: 19% 81% 38% 62% / 60% 21% 79% 40% ;
+    }
+
+    15% {
+	border-radius: 32% 68% 44% 56% / 70% 71% 29% 30% ;
+    }
+
+    30%
+    {
+
+	border-radius: 45% 55% 44% 56% / 24% 27% 73% 76% ;
+    }
+
+    50% {
+	border-radius: 17% 83% 100% 0% / 0% 100% 0% 100% ;
+    }
+
+    65% {
+	border-radius: 52% 48% 49% 51% / 38% 47% 53% 62% ; 
+    }
+
+    80%
+    {
+
+	border-radius: 17% 83% 75% 25% / 54% 57% 43% 46%  ;
+
+    }
+
+    100% {
+	border-radius: 40% 60% 38% 62% / 60% 45% 55% 40%;
     }
 }
