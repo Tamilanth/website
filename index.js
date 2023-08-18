@@ -5,7 +5,8 @@ window.onload = () => {
 	const main = document.getElementsByTagName("main");
 	const menuIcon = document.getElementById("menuIcon");
 	const themeButton = document.getElementById("theme");
-	const menu = document.getElementById("menu");
+    const menu = document.getElementById("menu");
+    const anchors = document.getElementsByTagName("a");
 	let darkmode = false;
 	let is_menu_open = false;
 	/*menu.style.left = toString(window.innerWidth - 1000) + "px";*/
@@ -29,8 +30,11 @@ window.onload = () => {
 
 		i_theme += 2;
 		body.style.color = `rgba(255, 255, 255, ${i_theme / 100})`;
-		body.style.background = `rgba(0, 0, 0, ${i_theme / 100})`;
-		header.style.background = `rgba(0, 0, 0, ${i_theme / 100 - 0.15})`;
+	    body.style.background = `rgba(0, 0, 0, ${i_theme / 100})`;
+	    header.style.background = `rgba(0, 0, 0, ${i_theme / 100 - 0.15})`;
+	    for (let x of anchors) {
+		x.style.background = `rgba(0, 0, 0, ${i_theme / 100 - 0.15})`;
+	    }
 		themeButton.style.filter = `invert(${i_theme}%)`;
 		menuIcon.style.filter = `invert(${i_theme}%)`;
 		themeButton.style.opacity = `${i_theme / 100}`;
@@ -51,7 +55,9 @@ window.onload = () => {
 		//if (!is_menu_open)
 		body.style.color = `rgba(0, 0, 0, ${(i_theme) / 100})`;
 		body.style.background = `rgba(0, 0, 0, ${(100 - i_theme) / 100})`;
-		header.style.background = "#e0e0e0";
+	    for (let x of anchors) {
+		x.style.opacity = `${i_theme / 100 - 0.05}`;
+	    }
 		header.style.opacity = `${i_theme / 100 - 0.05}`;
 		menu.style.color = `rgba(255, 255, 255, ${i_theme / 100})`;
 		if (i_theme >= 100) {
@@ -85,7 +91,10 @@ window.onload = () => {
 			is_incomplete_theme = true;
 			header.style.boxShadow = "8px 8px -8px -8px black";
 			animation_id_theme = window.requestAnimationFrame(animate_to_dark);
-			header.style.border = "inset #02e2e6 1px";
+		    header.style.border = "inset #02e2e6 1px";
+		    for (let x of anchors) {
+			x.style.border = "inset #02e2e6 1px";
+		    }
 			darkmode = true;
 
 		}
@@ -93,10 +102,15 @@ window.onload = () => {
 			if (!is_menu_open) {
 				main[0].style.color = `rgba(0,0, 0,100)`;
 			}
-
+		    header.style.background = "#e0e0e0";
 			is_incomplete_theme = true;
 			header.style.boxShadow = "8px 8px -8px -8px #ffffff";
-			header.style.borderWidth = "0px";
+		    header.style.borderWidth = "0px";
+		    for (let x of anchors) {
+			x.style.borderWidth = "0px";
+			x.style.background = "#e0e0e0";
+			x.style.boxShadow = "8px 8px -8px -8px #ffffff";
+		    }
 			themeButton.style.filter = "invert(0%)";
 			menuIcon.style.filter = "invert(0%)";
 			animation_id_theme = window.requestAnimationFrame(animate_to_light);
@@ -166,13 +180,16 @@ window.onload = () => {
 
 		}
 
-		if (is_menu_open) {
+	    if (is_menu_open) {
+		is_incomplete = true;
 			menu.style.opacity = '0';
 
 			animation_id = requestAnimationFrame(unblur);
 
 		}
-		else {
+	    else {
+
+		is_incomplete = true;
 
 			menu.style.display = 'block';
 			animation_id = requestAnimationFrame(blur);

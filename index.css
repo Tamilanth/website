@@ -11,6 +11,13 @@ body {
 ::selection {
     color: cyan;
 }
+
+nav {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 /*
 #about {
     padding: 30px;
@@ -25,13 +32,22 @@ body {
     background-color: #e0e0e0;
 }
 */
-a {
+a{
+    display: block;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 80vw;
+    margin-bottom: 10%;
+    border-radius: 10px;
    color: cyan;
    text-decoration: none;
 }
 
 a:visited {
     color: cyan;
+}
+a:active {
+    color: azure;
 }
 
 .buttonIcons {
@@ -86,15 +102,16 @@ h2 {
     width: auto;
     height: 5%;
     top:1%;
+    border-radius: 25px;
     font-size: 70px;
-    text-align: center;
-    border-radius: 0px;
-    opacity: 0.95;
-    /*box-shadow: 8px 8px -8px -8px  #ffffff;*/
     position: -webkit-sticky;
     position: sticky;
+}
+#header, a{
+    text-align: center;
+    opacity: 0.95;
+    /*box-shadow: 8px 8px -8px -8px  #ffffff;*/
     font-family: 'Tektur', cursive;
-    border-radius: 25px;
     background: #e0e0e0;
    /* box-shadow:  12px 12px 38px #b3b3b3,
 		 -12px -12px 38px #ffffff;*/
