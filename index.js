@@ -6,7 +6,7 @@ window.onload = () => {
 	const menuIcon = document.getElementById("menuIcon");
 	const themeButton = document.getElementById("theme");
 	const menu = document.getElementById("menu");
-	const anchors = document.getElementsByTagName("a");
+    const anchors = document.querySelectorAll("nav a");
 	let darkmode = true;
 	let is_menu_open = false;
 	/*menu.style.left = toString(window.innerWidth - 1000) + "px";*/
@@ -34,7 +34,7 @@ var roott = document.documentElement;
 
 		i_theme += 2;
 		body.style.color = `rgba(255, 255, 255, ${i_theme / 100})`;
-		body.style.background = `rgba(0, 0, 0, ${i_theme / 100})`;
+	    	body.style.background = `rgba(0, 0, 0, ${i_theme / 100})`;
 		header.style.background = `rgba(0, 0, 0, ${i_theme / 100 - 0.15})`;
 		for (let x of anchors) {
 			x.style.background = `rgba(0, 0, 0, ${i_theme / 100 - 0.15})`;
@@ -63,7 +63,7 @@ var roott = document.documentElement;
 	}
 	else {
 	    body.style.color = `rgba(255, 255, 255, 1)`;
-	    body.style.background = `rgba(0, 0, 0, 1)`;
+	    body.style.background = 'rgba(0, 0, 0, 0.3)';
 	    header.style.background = `rgba(0, 0, 0, 0.85)`;
 	    for (let x of anchors) {
 		x.style.background = `rgba(0, 0, 0, 0.85)`;

@@ -1,13 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400;500&display=swap');
 
-
 body {
+    background: url(imgs/wenhao-ryan-FQbOtTzS0RA-unsplash.jpg) !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center;
+    background-blend-mode: luminosity;
     width: 95%;
     height: 95%;
     text-align: left;
     font-family: 'Tektur', cursive;
 }
 
+#intro {
+    white-space: pre-line;
+}
+
+
+#intro, section, footer {
+    background: rgba(0, 0, 0,0.4);
+    margin-bottom: 5%;
+    margin-top: 5%;
+    border-radius: 6%;
+    padding: 10%;
+    
+}
 
 :root {
     color-scheme: light dark;
@@ -37,6 +55,11 @@ body {
     }
 
 }
+
+footer {
+    font-size: smaller;
+    text-align: center;
+}
 ::selection {
     color: cyan;
 }
@@ -44,11 +67,12 @@ body {
 nav {
     position: fixed;
     display: flex;
+    padding: 10%;
     flex-direction: row;
     align-items: center;
 }
 
-a{
+nav a{
     display: block;
     padding-top: 5%;
     padding-bottom: 5%;
@@ -97,7 +121,7 @@ a:active {
 }
 */
 
-h2 {
+#headerText {
     position: absolute;
     top: 49%;
     right: 38%;
@@ -123,7 +147,7 @@ h2 {
     position: -webkit-sticky;
     position: sticky;
 }
-#header, a{
+#header, nav a{
     text-align: center;
     opacity: 0.95;
     /*box-shadow: 8px 8px -8px -8px  #ffffff;*/
@@ -135,8 +159,14 @@ h2 {
 
 
 main {
-    margin: 20px;
-}
+    /*
+    background: url(imgs/melanie-weidmann-9he1mSaFsQg-unsplash\ \(1\).jpg);
+    background-repeat: repeat;
+    background-size: contain;
+    background-position: center;
+    background-blend-mode: luminosity;*/
+   /*margin: 20px;
+*/}
 
 
 #logo {
