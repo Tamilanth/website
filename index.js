@@ -7,7 +7,7 @@ window.onload = () => {
 	const themeButton = document.getElementById("theme");
 	const menu = document.getElementById("menu");
     const anchors = document.querySelectorAll("nav a");
-	let darkmode = true;
+//	let darkmode = true;
 	let is_menu_open = false;
 	/*menu.style.left = toString(window.innerWidth - 1000) + "px";*/
 
@@ -26,15 +26,18 @@ var roott = document.documentElement;
     roott.style.colorScheme = "light dark";
  // Get the MediaQueryList object
     let darkMode = window.matchMedia("(prefers-color-scheme: dark)");
+    let darkmode = darkMode;
+
+ 
     
-	let i_theme = 100, animation_id_theme = 0;
+     	let i_theme = 100, animation_id_theme = 0;
 	let is_incomplete_theme = false;
 
 	function animate_to_dark() {
 
 		i_theme += 2;
 		body.style.color = `rgba(255, 255, 255, ${i_theme / 100})`;
-	    	body.style.background = `rgba(0, 0, 0, ${i_theme / 100})`;
+	    	//body.style.background = `rgba(0, 0, 0, ${i_theme / 100})`;
 		header.style.background = `rgba(0, 0, 0, ${i_theme / 100 - 0.15})`;
 		for (let x of anchors) {
 			x.style.background = `rgba(0, 0, 0, ${i_theme / 100 - 0.15})`;
@@ -55,7 +58,7 @@ var roott = document.documentElement;
 	}
     function to_dark(animate) {
 	main[0].style.color = `rgba(255, 255, 255,100)`;
-	
+	body.style.backgroundImage = "url('imgs/wenhao-ryan-FQbOtTzS0RA-unsplash.jpg')";
 	is_incomplete_theme = true;
 	header.style.boxShadow = "8px 8px -8px -8px black";
 	if (animate) {
@@ -63,7 +66,7 @@ var roott = document.documentElement;
 	}
 	else {
 	    body.style.color = `rgba(255, 255, 255, 1)`;
-	    body.style.background = 'rgba(0, 0, 0, 0.3)';
+	    //body.style.background = 'rgba(0, 0, 0, 0.3)';
 	    header.style.background = `rgba(0, 0, 0, 0.85)`;
 	    for (let x of anchors) {
 		x.style.background = `rgba(0, 0, 0, 0.85)`;
@@ -84,7 +87,7 @@ var roott = document.documentElement;
 		i_theme += 2;
 		//if (!is_menu_open)
 		body.style.color = `rgba(0, 0, 0, ${(i_theme) / 100})`;
-		body.style.background = `rgba(0, 0, 0, ${(100 - i_theme) / 100})`;
+		//body.style.background = `rgba(0, 0, 0, ${(100 - i_theme) / 100})`;
 		for (let x of anchors) {
 			x.style.opacity = `${i_theme / 100 - 0.05}`;
 		}
@@ -103,6 +106,7 @@ var roott = document.documentElement;
 	}
 
     function to_light(animate) {
+	body.style.background ="url('https://images.unsplash.com/photo-1484503793037-5c9644d6a80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80')";
 	    if (!is_menu_open) {
 		main[0].style.color = `rgba(0,0, 0,100)`;
 	    }
@@ -137,7 +141,8 @@ var roott = document.documentElement;
 
 	*/
 
-	themeButton.addEventListener("click", () => {
+    themeButton.addEventListener("click", () => {
+	
 		if (is_incomplete_theme) {
 			window.cancelAnimationFrame(animation_id_theme);
 			is_incomplete_theme = false;
@@ -150,9 +155,7 @@ var roott = document.documentElement;
 		to_dark(1);
 		}
 	    else {
-		if (darkMode.matches) {
-			roott.style.colorScheme = "only light";
-		}
+	
 		to_light(1);
 		}
 	});
@@ -234,9 +237,13 @@ var roott = document.documentElement;
 		}
 
 	});
+
     
     
     
+    menu.addEventListener("click", () => {
+	animation_id = requestAnimationFrame(unblur);
+    });
     // Check if it matches
     if (darkMode.matches) {
 	to_dark(0);
