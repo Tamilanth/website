@@ -21,12 +21,12 @@ window.onload = () => {
 	window.cancelAnimationFrame = window.cancelAnimationFrame
 		|| window.mozCancelAnimationFrame
 		|| function (requestID) { clearTimeout(requestID) } //fall back
-
+/*
 var roott = document.documentElement;
     roott.style.colorScheme = "light dark";
- // Get the MediaQueryList object
+*/ // Get the MediaQueryList object
     let darkMode = window.matchMedia("(prefers-color-scheme: dark)");
-    let darkmode = darkMode;
+    let darkmode = darkMode.matches;
 
  
     
@@ -57,10 +57,12 @@ var roott = document.documentElement;
 
 	}
     function to_dark(animate) {
+	if (!is_menu_open)
 	main[0].style.color = `rgba(255, 255, 255,100)`;
 	body.style.backgroundImage = "url('imgs/wenhao-ryan-FQbOtTzS0RA-unsplash.jpg')";
 	is_incomplete_theme = true;
 	header.style.boxShadow = "8px 8px -8px -8px black";
+	
 	if (animate) {
 	    animation_id_theme = window.requestAnimationFrame(animate_to_dark);
 	}
