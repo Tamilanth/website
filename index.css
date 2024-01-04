@@ -1,13 +1,80 @@
 @import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400;500&display=swap');
 
-
+:root {
+    color-scheme: light dark;
+}
 body {
-    width: 95%;
+    background: url(https://images.unsplash.com/photo-1484503793037-5c9644d6a80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80); 
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center;
+   /*background-blend-mode: luminosity !important;
+    */width: 95%;
     height: 95%;
     text-align: left;
     font-family: 'Tektur', cursive;
 }
 
+#intro {
+    white-space: pre-line;
+}
+
+
+#intro, section, footer {
+    background: rgba(0, 0, 0,0.4);
+    margin-bottom: 5%;
+    margin-top: 5%;
+    border-radius: 25px;
+}
+
+ section {
+    padding: 10%;
+    
+}
+
+
+@media (prefers-color-scheme: dark) {
+	main {
+	    color:rgba(255, 255, 255,1);
+	}
+	body {
+	    background: url(imgs/wenhao-ryan-FQbOtTzS0RA-unsplash.jpg);
+	    background-repeat: no-repeat !important;
+	    background-attachment: fixed !important;
+	    background-size: cover !important;
+	    background-position: center;
+	    background-blend-mode: luminosity;
+	    width: 95%;
+	    height: 95%;
+	    text-align: left;
+	    font-family: 'Tektur', cursive;
+	}
+	#header {
+
+	background-color: rgba(0, 0, 0, 0.85);
+	box-shadow: 8px 8px -8px -8px black;
+	border:inset #02e2e6 1px;
+	}
+/*	a {
+	    background:rgba(0, 0, 0, 0.85);
+	border: inset #02e2e6 1px;
+    }
+  */  body {
+    color : rgb(255, 255, 255);
+    background:rgb(0, 0, 0);
+    }
+
+    #theme, #menuIcon {
+	filter:invert(100%);
+    }
+
+}
+
+footer {
+    font-size: 3% !important;
+    text-align: center;
+}
 ::selection {
     color: cyan;
 }
@@ -15,27 +82,14 @@ body {
 nav {
     position: fixed;
     display: flex;
+    padding: 10%;
     flex-direction: row;
-    align-items: center;
 }
-/*
-#about {
-    padding: 30px;
-    width: 80% ;
-    border-radius: 8%;
-    height: 10%;
-    border-radius: 50px;
-    background: linear-gradient(145deg, #f0f0f0, #cacaca);
-    box-shadow:  18px 18px 36px #bebebe,
-		 -18px -18px 36px #ffffff;
-    margin-bottom: 10%;
-    background-color: #e0e0e0;
-}
-*/
-a{
+
+nav a{
     display: block;
-    padding-top: 10%;
-    padding-bottom: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     width: 80vw;
     margin-bottom: 10%;
     border-radius: 10px;
@@ -51,18 +105,16 @@ a:active {
 }
 
 .buttonIcons {
-    
-    width: 12%;
-    height: 6%;
-    background-color: white;
-    border-radius: 30%;
+  
+    background-color: transparent;
+    /*border-radius: 30%;*/
     position: fixed;
     right: 3%;
 }
 
 #theme {
     bottom: 3%;
- 
+    width: 46px;
 }
 
 #menu {
@@ -78,10 +130,10 @@ a:active {
 /*
 #menuList {
     
-}
+
 */
 
-h2 {
+#headerText {
     position: absolute;
     top: 49%;
     right: 38%;
@@ -91,10 +143,10 @@ h2 {
 }
 
 #menuIcon {
-    bottom: 10%;
-    width: 8%;
+    bottom: 80px;
+    width: 30px;
     padding-right: 10px;
-    height: 8%;
+   
 }
 
 #header {
@@ -107,7 +159,7 @@ h2 {
     position: -webkit-sticky;
     position: sticky;
 }
-#header, a{
+#header, nav a{
     text-align: center;
     opacity: 0.95;
     /*box-shadow: 8px 8px -8px -8px  #ffffff;*/
@@ -117,11 +169,22 @@ h2 {
 		 -12px -12px 38px #ffffff;*/
 }
 
-
-main {
-    margin: 20px;
+section h2 {
+    text-decoration: underline cyan;
+    white-space: pre;
 }
 
+/*
+main {
+    /*
+    background: url(imgs/melanie-weidmann-9he1mSaFsQg-unsplash\ \(1\).jpg);
+    background-repeat: repeat;
+    background-size: contain;
+    background-position: center;
+    background-blend-mode: luminosity;*/
+/*margin: 20px;
+}
+*/
 
 #logo {
     animation-name: LogoReveal;
